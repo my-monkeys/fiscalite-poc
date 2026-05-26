@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fiscalite.my-monkey.fr/sitemap.xml
