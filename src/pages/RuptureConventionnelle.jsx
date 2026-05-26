@@ -10,8 +10,8 @@ const BASE = 'https://fiscalite.my-monkey.fr'
 
 const copy = {
   fr: {
-    title: 'Calculateur Rupture Conventionnelle 2024 — Indemnité légale',
-    description: 'Calculez votre indemnité de rupture conventionnelle, la part exonérée et imposable. Barème légal 2024, PASS inclus.',
+    title: 'Calculateur Rupture Conventionnelle 2026 — Indemnité légale',
+    description: 'Calculez votre indemnité de rupture conventionnelle, la part exonérée et imposable. Barème légal 2026, PASS inclus.',
     h1: 'Rupture conventionnelle',
     salaire: 'Salaire brut mensuel moyen (12 derniers mois)',
     ans: 'Ancienneté — années',
@@ -19,12 +19,12 @@ const copy = {
     indemnite: 'Indemnité brute',
     exoneree: 'Part exonérée',
     imposable: 'Part imposable',
-    note: 'Exonération limitée à 2 × PASS 2024 = 92 736 €. Indemnité ≤ 10 ans : ¼ salaire/an ; > 10 ans : ⅓ salaire/an (tranche supérieure).',
+    note: 'Exonération limitée à 2 × PASS 2025 = 94 200 €. Indemnité ≤ 10 ans : ¼ salaire/an ; > 10 ans : ⅓ salaire/an (tranche supérieure).',
     back: '← Retour',
   },
   en: {
-    title: 'French Severance Pay Calculator 2024 — Rupture Conventionnelle',
-    description: 'Calculate your severance pay (rupture conventionnelle), tax-exempt and taxable portions. 2024 French legal scale.',
+    title: 'French Severance Pay Calculator 2026 — Rupture Conventionnelle',
+    description: 'Calculate your severance pay (rupture conventionnelle), tax-exempt and taxable portions. 2026 French legal scale.',
     h1: 'Severance Pay',
     salaire: 'Average monthly gross salary (last 12 months)',
     ans: 'Years of service',
@@ -32,7 +32,7 @@ const copy = {
     indemnite: 'Gross severance',
     exoneree: 'Tax-exempt portion',
     imposable: 'Taxable portion',
-    note: 'Exemption capped at 2 × PASS 2024 = €92,736. ≤10 years: ¼ month/year; >10 years: ⅓ month/year (above 10).',
+    note: 'Exemption capped at 2 × PASS 2025 = €94,200. ≤10 years: ¼ month/year; >10 years: ⅓ month/year (above 10).',
     back: '← Back',
   },
 }

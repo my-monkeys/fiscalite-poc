@@ -10,8 +10,8 @@ const BASE = 'https://fiscalite.my-monkey.fr'
 
 const copy = {
   fr: {
-    title: 'Calculateur Net / Brut — Salaire & Auto-entrepreneur 2024',
-    description: 'Convertissez salaire brut en net, calculez le coût employeur et les charges auto-entrepreneur (BIC, BNC). Données 2024.',
+    title: 'Calculateur Net / Brut — Salaire & Auto-entrepreneur 2026',
+    description: 'Convertissez salaire brut en net, calculez le coût employeur et les charges auto-entrepreneur (BIC, BNC). Données 2026.',
     h1: 'Net / Brut',
     salarie: 'Salarié',
     ae: 'Auto-entrepreneur',
@@ -24,13 +24,13 @@ const copy = {
     annuel: 'Annuel',
     ca: "Chiffre d'affaires",
     categorie: 'Catégorie',
-    cats: { 'bic-marchand': 'BIC marchand (12.3%)', 'bic-service': 'BIC service (21.2%)', 'bnc': 'BNC (23.1%)' },
+    cats: { 'bic-marchand': 'BIC marchand 12,3 %', 'bic-service': 'BIC service 21,2 %', 'bnc': 'BNC 23,1 %' },
     netPercu: 'Net perçu', cotisations: 'Cotisations salariales', coutEmployeur: 'Coût employeur', charges: 'Charges AE',
     back: '← Retour',
   },
   en: {
-    title: 'Net / Gross Salary Calculator France 2024',
-    description: 'Convert gross to net salary, calculate employer cost and self-employed contributions (BIC, BNC). 2024 figures.',
+    title: 'Net / Gross Salary Calculator France 2026',
+    description: 'Convert gross to net salary, calculate employer cost and self-employed contributions (BIC, BNC). 2026 figures.',
     h1: 'Net / Gross',
     salarie: 'Employee',
     ae: 'Self-employed',
@@ -43,7 +43,7 @@ const copy = {
     annuel: 'Annual',
     ca: 'Revenue',
     categorie: 'Category',
-    cats: { 'bic-marchand': 'BIC retail (12.3%)', 'bic-service': 'BIC service (21.2%)', 'bnc': 'BNC (23.1%)' },
+    cats: { 'bic-marchand': 'BIC retail 12.3%', 'bic-service': 'BIC service 21.2%', 'bnc': 'BNC 23.1%' },
     netPercu: 'Net received', cotisations: 'Employee contributions', coutEmployeur: 'Employer cost', charges: 'SE contributions',
     back: '← Back',
   },

@@ -14,7 +14,7 @@ const copy = {
     sub: 'Des calculateurs simples pour mieux comprendre votre situation fiscale.',
     tools: [
       { icon: Wallet,    label: 'Net / Brut',                  desc: 'Calculez votre salaire net, coût employeur et charges selon votre statut.', to: '/net-brut' },
-      { icon: BarChart2, label: 'Simulateur IR',                desc: 'Estimez votre impôt sur le revenu selon le barème 2024.', to: '/simulateur-ir' },
+      { icon: BarChart2, label: 'Simulateur IR',                desc: 'Estimez votre impôt sur le revenu selon le barème 2026.', to: '/simulateur-ir' },
       { icon: FileText,  label: 'Rupture conventionnelle',      desc: "Calculez votre indemnité légale et la part exonérée d'impôt.", to: '/rupture-conventionnelle' },
     ],
   },
@@ -25,7 +25,7 @@ const copy = {
     sub: 'Simple calculators to better understand your tax situation in France.',
     tools: [
       { icon: Wallet,    label: 'Net / Gross',    desc: 'Calculate your net salary, employer cost, and social contributions.', to: '/en/net-gross' },
-      { icon: BarChart2, label: 'Income Tax',     desc: 'Estimate your income tax using the 2024 French tax brackets.', to: '/en/income-tax' },
+      { icon: BarChart2, label: 'Income Tax',     desc: 'Estimate your income tax using the 2026 French tax brackets.', to: '/en/income-tax' },
       { icon: FileText,  label: 'Severance Pay',  desc: 'Calculate your legal severance and tax-exempt portion.', to: '/en/severance' },
     ],
   },

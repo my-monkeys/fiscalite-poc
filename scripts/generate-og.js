@@ -25,7 +25,7 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" v
 
   <!-- Main headline -->
   <text x="80" y="300" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="76" font-weight="800" fill="#1a1a2e">Calculateurs fiscaux</text>
-  <text x="80" y="392" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="76" font-weight="800" fill="#1a1a2e">fran&#xe7;ais 2024</text>
+  <text x="80" y="392" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="76" font-weight="800" fill="#1a1a2e">fran&#xe7;ais 2026</text>
 
   <!-- Tool names -->
   <text x="80" y="478" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="24" fill="#6b7280">Net / Brut  &#xb7;  Simulateur IR  &#xb7;  Rupture conventionnelle</text>

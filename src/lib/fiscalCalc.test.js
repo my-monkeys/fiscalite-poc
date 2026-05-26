@@ -39,8 +39,8 @@ describe('computeIR', () => {
     expect(computeIR(10000).irTotal).toBe(0)
   })
   it('calcule correctement dans la tranche 11%', () => {
-    // 20000 - 11294 = 8706 dans la tranche 11% → 8706 * 0.11 = 957.66 → 958
-    expect(computeIR(20000, 1).irTotal).toBe(958)
+    // 20000 - 11497 = 8503 dans la tranche 11% → 8503 * 0.11 = 935.33 → 935
+    expect(computeIR(20000, 1).irTotal).toBe(935)
   })
   it('applique le quotient familial (2 parts)', () => {
     // revenuParPart = 20000 / 2 = 10000, sous le seuil → 0
@@ -56,11 +56,11 @@ describe('computeIR', () => {
   })
   it('applique le plafond du quotient familial (art. 197 CGI)', () => {
     // Pour 80000€ à 2.5 parts, la réduction via quotient ne peut dépasser
-    // 879.5€ × (2.5 - 1) × 2 = 879.5 × 3 = 2638.5€
+    // 895.5€ × (2.5 - 1) × 2 = 895.5 × 3 = 2686.5€
     const ir1Part = computeIR(80000, 1).irTotal
     const ir2p5Parts = computeIR(80000, 2.5).irTotal
     const reduction = ir1Part - ir2p5Parts
-    expect(reduction).toBeLessThanOrEqual(2638.5)
+    expect(reduction).toBeLessThanOrEqual(2686.5)
     // La réduction doit quand même être positive (le quotient joue un rôle)
     expect(reduction).toBeGreaterThan(0)
   })
@@ -81,9 +81,9 @@ describe('computeRC', () => {
     expect(r.partieExoneree).toBe(r.indemnite)
   })
   it('découpe correctement si indemnité > 2×PASS', () => {
-    // 12000*0.25*10 + 12000*(1/3)*20 = 30000 + 80000 = 110000 > 92736
+    // 12000*0.25*10 + 12000*(1/3)*20 = 30000 + 80000 = 110000 > 94200
     const r = computeRC(12000, 30)
-    expect(r.partieExoneree).toBe(92736)
-    expect(r.partieImposable).toBe(17264)
+    expect(r.partieExoneree).toBe(94200)
+    expect(r.partieImposable).toBe(15800)
   })
 })

@@ -1,5 +1,5 @@
-const TAUX_COTISATIONS_SALARIALES = 0.22  // approximation 2024 (réel ≈ 23-24%, varie selon la situation)
-const TAUX_CHARGES_PATRONALES = 0.42       // approximation 2024 (réel ≈ 40-45%)
+const TAUX_COTISATIONS_SALARIALES = 0.22  // approximation (réel ≈ 23-24%, varie selon la situation)
+const TAUX_CHARGES_PATRONALES = 0.42       // approximation (réel ≈ 40-45%)
 
 export function grossToNet(gross) {
   return gross * (1 - TAUX_COTISATIONS_SALARIALES)
@@ -24,15 +24,19 @@ export function aeToNet(ca, category) {
   return ca * (1 - rate)
 }
 
+// Barème IR 2025 (revenus 2024, déclarés au printemps 2025) — loi de finances 2025
+// Indexé +1,8% par rapport à 2024. Valeurs 2026 à confirmer avec la loi de finances 2026.
 const TRANCHES = [
-  { min: 0,      max: 11294,   rate: 0    },
-  { min: 11294,  max: 28797,   rate: 0.11 },
-  { min: 28797,  max: 82341,   rate: 0.30 },
-  { min: 82341,  max: 177106,  rate: 0.41 },
-  { min: 177106, max: Infinity, rate: 0.45 },
+  { min: 0,      max: 11497,   rate: 0    },
+  { min: 11497,  max: 29315,   rate: 0.11 },
+  { min: 29315,  max: 83823,   rate: 0.30 },
+  { min: 83823,  max: 180294,  rate: 0.41 },
+  { min: 180294, max: Infinity, rate: 0.45 },
 ]
 
-const PLAFOND_DEMI_PART_2024 = 879.5  // 1 759€ / 2 per half-part (art. 197 CGI)
+// Plafond du quotient familial 2025 : 1 791€/demi-part (art. 197 CGI)
+// La formule utilise extraHalfParts = (parts-1)*2, d'où 1791/2 = 895.5
+const PLAFOND_DEMI_PART = 895.5
 
 function irBaseBracketed(revenuParPart) {
   let total = 0
@@ -58,11 +62,11 @@ export function computeIR(revenuImposable, parts = 1) {
 
   let irTotal = Math.round(irParPart * parts)
 
-  // Apply quotient familial cap (art. 197 CGI): max 879.5€ reduction per extra half-part
+  // Apply quotient familial cap (art. 197 CGI): max 895.5€ reduction per extra half-part
   if (parts > 1) {
     const extraHalfParts = (parts - 1) * 2
     const ir1Part = Math.round(irBaseBracketed(revenuImposable))
-    const maxReduction = extraHalfParts * PLAFOND_DEMI_PART_2024
+    const maxReduction = extraHalfParts * PLAFOND_DEMI_PART
     const actualReduction = ir1Part - irTotal
     if (actualReduction > maxReduction) {
       irTotal = Math.round(ir1Part - maxReduction)
@@ -79,16 +83,18 @@ export function computeIR(revenuImposable, parts = 1) {
   return { irTotal, tauxMoyen, tauxMarginal, detail }
 }
 
-const PASS_2024 = 46368
+// PASS 2025 : 47 100€ — Plafond Annuel de la Sécurité Sociale
+// PASS 2026 à confirmer avec la loi de financement de la sécurité sociale 2026.
+const PASS = 47100
 
-// Simplified estimate: uses only the 2×PASS cap (92 736€ in 2024) as the exoneration ceiling.
+// Simplified estimate: uses only the 2×PASS cap as the exoneration ceiling.
 // The full legal formula (art. L1237-19 et art. 80 duodecies CGI) also considers:
 //   - 50% of total indemnity, and
 //   - 1× annual gross salary.
 // The exoneration is capped at the highest of those three limits.
 // For this public simulator, using 2×PASS alone is a reasonable approximation for most cases.
 export function computeRC(salaireBrut, anciennete) {
-  const EXONERATION_MAX = 2 * PASS_2024
+  const EXONERATION_MAX = 2 * PASS
 
   let indemnite
   if (anciennete <= 10) {

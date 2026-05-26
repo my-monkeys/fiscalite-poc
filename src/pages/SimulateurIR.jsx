@@ -10,9 +10,9 @@ const BASE = 'https://fiscalite.my-monkey.fr'
 
 const copy = {
   fr: {
-    title: 'Simulateur Impôt sur le Revenu 2024 — Barème IR France',
-    description: 'Estimez votre impôt sur le revenu 2024 : barème par tranches, quotient familial, taux moyen et marginal.',
-    h1: 'Simulateur IR 2024',
+    title: 'Simulateur Impôt sur le Revenu 2026 — Barème IR France',
+    description: 'Estimez votre impôt sur le revenu 2026 : barème par tranches, quotient familial, taux moyen et marginal.',
+    h1: 'Simulateur IR 2026',
     revenu: 'Revenu net imposable (€)',
     abattLabel: 'Appliquer abattement forfaitaire 10% (salariés)',
     parts: 'Quotient familial (parts)',
@@ -21,9 +21,9 @@ const copy = {
     back: '← Retour',
   },
   en: {
-    title: '2024 French Income Tax Simulator — IR Calculator',
-    description: 'Estimate your 2024 French income tax: tax brackets, family quotient, average and marginal rates.',
-    h1: 'Income Tax 2024',
+    title: '2026 French Income Tax Simulator — IR Calculator',
+    description: 'Estimate your 2026 French income tax: tax brackets, family quotient, average and marginal rates.',
+    h1: 'Income Tax 2026',
     revenu: 'Net taxable income (€)',
     abattLabel: 'Apply 10% flat deduction (employees)',
     parts: 'Family quotient (parts)',
@@ -48,7 +48,7 @@ export default function SimulateurIR({ lang = 'fr' }) {
   const revenuVal = parseFloat(revenu) || 0
   let revenuImposable = revenuVal
   if (abattement && revenuVal > 0) {
-    const ded = Math.min(Math.max(revenuVal * 0.1, 495), 14171)
+    const ded = Math.min(Math.max(revenuVal * 0.1, 504), 14426)
     revenuImposable = revenuVal - ded
   }
 
