@@ -54,6 +54,16 @@ describe('computeIR', () => {
     expect(r.detail.length).toBeGreaterThan(0)
     expect(r.detail[0].rate).toBe(0.11)
   })
+  it('applique le plafond du quotient familial (art. 197 CGI)', () => {
+    // Pour 80000€ à 2.5 parts, la réduction via quotient ne peut dépasser
+    // 879.5€ × (2.5 - 1) × 2 = 879.5 × 3 = 2638.5€
+    const ir1Part = computeIR(80000, 1).irTotal
+    const ir2p5Parts = computeIR(80000, 2.5).irTotal
+    const reduction = ir1Part - ir2p5Parts
+    expect(reduction).toBeLessThanOrEqual(2638.5)
+    // La réduction doit quand même être positive (le quotient joue un rôle)
+    expect(reduction).toBeGreaterThan(0)
+  })
 })
 
 describe('computeRC', () => {
