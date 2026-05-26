@@ -22,6 +22,7 @@ export default function App() {
         <Route path="/en/severance" element={<RuptureConventionnelle lang="en" />} />
         <Route path="/mentions-legales" element={<MentionsLegales />} />
         <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
+        <Route path="*" element={<Home lang="fr" />} />
       </Routes>
     </>
   )

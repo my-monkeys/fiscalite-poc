@@ -18,7 +18,6 @@ export default function PolitiqueConfidentialite() {
         title="Politique de confidentialité — fiscalite.my-monkey.fr"
         description="Politique de confidentialité de fiscalite.my-monkey.fr : cookies AdSense, données personnelles, droits RGPD."
         canonical={`${BASE}/politique-confidentialite`}
-        ogImage={`${BASE}/og/default.png`}
       />
       <Nav lang="fr" />
       <main style={{ maxWidth: 640, margin: '0 auto', padding: '32px 20px', color: '#1a1a2e' }}>

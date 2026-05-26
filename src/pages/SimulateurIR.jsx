@@ -60,7 +60,7 @@ export default function SimulateurIR({ lang = 'fr' }) {
 
   return (
     <>
-      <Seo title={c.title} description={c.description} canonical={canonical} hreflangFr={`${BASE}${frPath}`} hreflangEn={`${BASE}${enPath}`} jsonLd={jsonLd} ogImage={`${BASE}/og/default.png`} />
+      <Seo title={c.title} description={c.description} canonical={canonical} hreflangFr={`${BASE}${frPath}`} hreflangEn={`${BASE}${enPath}`} jsonLd={jsonLd} />
       <Nav lang={lang} />
       <main style={{ maxWidth: 640, margin: '0 auto', padding: '32px 20px' }}>
         <Link to={lang === 'en' ? '/en/' : '/'} style={{ color: '#9ca3af', fontSize: 12, textDecoration: 'none', display: 'inline-block', marginBottom: 20 }}>{c.back}</Link>

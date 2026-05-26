@@ -19,7 +19,6 @@ export default function MentionsLegales() {
         title="Mentions légales — fiscalite.my-monkey.fr"
         description="Mentions légales du site fiscalite.my-monkey.fr : éditeur, hébergeur, contact."
         canonical={`${BASE}/mentions-legales`}
-        ogImage={`${BASE}/og/default.png`}
       />
       <Nav lang="fr" />
       <main style={{ maxWidth: 640, margin: '0 auto', padding: '32px 20px', color: '#1a1a2e' }}>

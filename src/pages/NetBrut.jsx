@@ -16,6 +16,8 @@ const copy = {
     salarie: 'Salarié',
     ae: 'Auto-entrepreneur',
     montant: 'Montant',
+    direction: 'Direction',
+    periode: 'Période',
     brut: 'Brut → Net',
     net: 'Net → Brut',
     mensuel: 'Mensuel',
@@ -33,6 +35,8 @@ const copy = {
     salarie: 'Employee',
     ae: 'Self-employed',
     montant: 'Amount',
+    direction: 'Direction',
+    periode: 'Period',
     brut: 'Gross → Net',
     net: 'Net → Gross',
     mensuel: 'Monthly',
@@ -109,7 +113,7 @@ export default function NetBrut({ lang = 'fr' }) {
 
   return (
     <>
-      <Seo title={c.title} description={c.description} canonical={canonical} hreflangFr={`${BASE}${frPath}`} hreflangEn={`${BASE}${enPath}`} jsonLd={jsonLd} ogImage={`${BASE}/og/default.png`} />
+      <Seo title={c.title} description={c.description} canonical={canonical} hreflangFr={`${BASE}${frPath}`} hreflangEn={`${BASE}${enPath}`} jsonLd={jsonLd} />
       <Nav lang={lang} />
       <main style={{ maxWidth: 640, margin: '0 auto', padding: '32px 20px' }}>
         <Link to={lang === 'en' ? '/en/' : '/'} style={{ color: '#9ca3af', fontSize: 12, textDecoration: 'none', display: 'inline-block', marginBottom: 20 }}>{c.back}</Link>
@@ -134,11 +138,11 @@ export default function NetBrut({ lang = 'fr' }) {
               </div>
               <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
                 <div>
-                  <label style={labelStyle}>Direction</label>
+                  <label style={labelStyle}>{c.direction}</label>
                   <ToggleGroup options={[['brut', c.brut], ['net', c.net]]} value={direction} onChange={setDirection} />
                 </div>
                 <div>
-                  <label style={labelStyle}>Période</label>
+                  <label style={labelStyle}>{c.periode}</label>
                   <ToggleGroup options={[['mensuel', c.mensuel], ['annuel', c.annuel]]} value={periode} onChange={setPeriode} />
                 </div>
               </div>

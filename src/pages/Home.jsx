@@ -45,7 +45,6 @@ export default function Home({ lang = 'fr' }) {
         canonical={canonical}
         hreflangFr={`${BASE}${frPath}`}
         hreflangEn={`${BASE}${enPath}`}
-        ogImage={`${BASE}/og/default.png`}
       />
       <Nav lang={lang} />
       <main style={{ maxWidth: 860, margin: '0 auto', padding: '48px 20px' }}>
