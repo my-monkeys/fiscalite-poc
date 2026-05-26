@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import CookieBanner from './components/CookieBanner'
 import Home from './pages/Home'
 import NetBrut from './pages/NetBrut'
+import SimulateurIR from './pages/SimulateurIR'
 
 export default function App() {
   return (
@@ -12,6 +13,8 @@ export default function App() {
         <Route path="/en/" element={<Home lang="en" />} />
         <Route path="/net-brut" element={<NetBrut lang="fr" />} />
         <Route path="/en/net-gross" element={<NetBrut lang="en" />} />
+        <Route path="/simulateur-ir" element={<SimulateurIR lang="fr" />} />
+        <Route path="/en/income-tax" element={<SimulateurIR lang="en" />} />
       </Routes>
     </>
   )
