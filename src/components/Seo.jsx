@@ -1,5 +1,7 @@
 import { useEffect } from 'react'
 
+const SITE_NAME = 'fiscalite.my-monkey.fr'
+
 export default function Seo({ title, description, canonical, hreflangFr, hreflangEn, jsonLd, ogImage }) {
   useEffect(() => {
     document.title = title
@@ -7,9 +9,15 @@ export default function Seo({ title, description, canonical, hreflangFr, hreflan
     setMeta('og:title', title, true)
     setMeta('og:description', description, true)
     setMeta('og:url', canonical, true)
+    setMeta('og:site_name', SITE_NAME, true)
+    setMeta('twitter:title', title)
+    setMeta('twitter:description', description)
     if (ogImage) setMeta('og:image', ogImage, true)
     setLink('canonical', canonical)
-    if (hreflangFr) setHreflang('fr', hreflangFr)
+    if (hreflangFr) {
+      setHreflang('fr', hreflangFr)
+      setHreflang('x-default', hreflangFr)
+    }
     if (hreflangEn) setHreflang('en', hreflangEn)
     if (jsonLd) setJsonLd(jsonLd)
     return () => { document.querySelectorAll('[data-seo-cleanup]').forEach(el => el.remove()) }
