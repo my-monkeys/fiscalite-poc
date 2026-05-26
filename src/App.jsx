@@ -4,6 +4,8 @@ import Home from './pages/Home'
 import NetBrut from './pages/NetBrut'
 import SimulateurIR from './pages/SimulateurIR'
 import RuptureConventionnelle from './pages/RuptureConventionnelle'
+import MentionsLegales from './pages/MentionsLegales'
+import PolitiqueConfidentialite from './pages/PolitiqueConfidentialite'
 
 export default function App() {
   return (
@@ -18,6 +20,8 @@ export default function App() {
         <Route path="/en/income-tax" element={<SimulateurIR lang="en" />} />
         <Route path="/rupture-conventionnelle" element={<RuptureConventionnelle lang="fr" />} />
         <Route path="/en/severance" element={<RuptureConventionnelle lang="en" />} />
+        <Route path="/mentions-legales" element={<MentionsLegales />} />
+        <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
       </Routes>
     </>
   )
