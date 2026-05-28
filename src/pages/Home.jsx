@@ -188,6 +188,42 @@ export default function Home({ lang = 'fr' }) {
         </div>
       </main>
 
+      {/* ── Simulateur d'embauche ────────────────────────────── */}
+      <div style={{ background: '#ffffff', borderTop: '1px solid #e8e4de' }}>
+        <div style={{ maxWidth: 860, margin: '0 auto', padding: '56px 20px' }}>
+
+          <p style={{ textAlign: 'center', color: '#9ca3af', fontSize: 11, fontWeight: 600, letterSpacing: '.1em', textTransform: 'uppercase', marginBottom: 12 }}>
+            {c.simulLabel}
+          </p>
+
+          <h2 style={{ color: '#1a1a2e', fontSize: 22, fontWeight: 800, letterSpacing: '-.03em', textAlign: 'center', marginBottom: 12 }}>
+            {c.simulTitle}
+          </h2>
+
+          <p style={{ color: '#6b7280', fontSize: 14, lineHeight: 1.6, textAlign: 'center', maxWidth: 540, margin: '0 auto 28px' }}>
+            {c.simulSub}
+          </p>
+
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, justifyContent: 'center', marginBottom: 28 }}>
+            {contracts.map(({ label, infoUrl }) => (
+              <span key={label} style={{ background: '#f9f7f4', border: '1px solid #e8e4de', borderRadius: 20, padding: '6px 14px', color: '#1a1a2e', fontWeight: 600, fontSize: 13, display: 'inline-flex', alignItems: 'center' }}>
+                {label}
+                <a href={infoUrl} target="_blank" rel="noopener noreferrer" style={{ color: '#059669', fontSize: 14, marginLeft: 6, lineHeight: 1, textDecoration: 'none' }}>ⓘ</a>
+              </span>
+            ))}
+          </div>
+
+          <iframe
+            src="https://mon-entreprise.urssaf.fr/iframes/simulateur-embauche?integratorUrl=https%3A%2F%2Fcode.travail.gouv.fr%2Foutils%2Fsimulateur-embauche&lang=fr"
+            title={c.iframeTitle}
+            loading="lazy"
+            className="simul-iframe"
+            style={{ width: '100%', height: 600, border: '1px solid #e8e4de', borderRadius: 10, display: 'block' }}
+          />
+
+        </div>
+      </div>
+
       <Footer />
     </>
   )
