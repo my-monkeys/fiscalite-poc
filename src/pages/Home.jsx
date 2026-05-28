@@ -87,6 +87,14 @@ const copy = {
   },
 }
 
+const contracts = [
+  { label: 'CDI',                  infoUrl: 'https://www.service-public.fr/particuliers/vosdroits/F1906' },
+  { label: 'CDD',                  infoUrl: 'https://www.service-public.fr/particuliers/vosdroits/F34' },
+  { label: 'Apprentissage',        infoUrl: 'https://www.alternance.emploi.gouv.fr/contrat-apprentissage' },
+  { label: 'Professionnalisation', infoUrl: 'https://travail-emploi.gouv.fr/formation-professionnelle/mise-en-oeuvre-des-dispositifs-de-formation/article/le-contrat-de-professionnalisation' },
+  { label: 'Stage',                infoUrl: 'https://www.service-public.fr/particuliers/vosdroits/F16734' },
+]
+
 export default function Home({ lang = 'fr' }) {
   const c = copy[lang]
   const frPath = '/'
