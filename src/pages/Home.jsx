@@ -41,6 +41,10 @@ const copy = {
       { icon: Zap,      label: 'Résultats immédiats',  desc: 'Calcul instantané au fil de la saisie, sans valider de formulaire.' },
       { icon: Shield,   label: 'Données privées',      desc: 'Aucune donnée transmise — tout reste dans votre navigateur.' },
     ],
+    simulLabel: 'Simulateur d\'embauche',
+    simulTitle: 'Estimez le coût d\'une embauche',
+    simulSub: 'Choisissez un type de contrat pour en savoir plus, puis utilisez le simulateur URSSAF ci-dessous.',
+    iframeTitle: 'Simulateur d\'embauche URSSAF',
   },
   en: {
     title: 'French Tax Calculators — Free Tools 2026',
@@ -76,6 +80,10 @@ const copy = {
       { icon: Zap,      label: 'Instant results',        desc: 'Results update as you type — no form submission needed.' },
       { icon: Shield,   label: 'Private data',           desc: 'Nothing is sent anywhere — all calculations stay in your browser.' },
     ],
+    simulLabel: 'Hiring cost simulator',
+    simulTitle: 'Estimate the cost of hiring',
+    simulSub: 'Select a contract type to learn more, then use the URSSAF simulator below.',
+    iframeTitle: 'URSSAF hiring cost simulator',
   },
 }
 
